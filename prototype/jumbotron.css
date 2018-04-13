@@ -1,0 +1,29 @@
+*{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.row {
+
+	margin-top: 3%;
+}
+
+
+#line1 {
+	margin-left: 5%;
+}
+#line2 {
+	margin-left: 10%;
+}
+#line3 {
+	margin-left: 15%;
+}
+
+.jumbotron {
+	background: url("trees.jpg") no-repeat;
+	background-size: auto;
+	background-repeat: round;
+}
+
+.handprinter-text{
+	background-color: rgb(255, 255, 255, 0.75);;
+}
