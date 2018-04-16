@@ -4,7 +4,7 @@ import logo from './img/logo_handprint.png'
 import Homepage from './components/homepage.js'
 import { connect } from 'react-redux';
 import { takeAction, addIdea } from './actions/actionIdea';
-import { addTime } from './actions/timer';
+import { addTime, refreshTime } from './actions/timer';
 
 
 class App extends Component {
@@ -38,7 +38,8 @@ const mapDispatchToProps = (dispatch) => ({
 
   takeAction: (idea) => {dispatch(takeAction(idea))},
   addIdea: (idea) => { dispatch(addIdea(idea)) },
-  addTime: (time) => { dispatch(addTime(time)) }
+  addTime: (time) => { dispatch(addTime(time)) },
+  refreshTime: () => { dispatch(refreshTime()) }
 
 });
 

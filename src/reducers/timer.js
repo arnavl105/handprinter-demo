@@ -11,6 +11,17 @@ export const timer = (state = initialState, action) => {
 				...state,
 				expTime: state.expTime + action.time
 			}
+		case "REFRESH_TIME":
+
+			var times = (state.expTime > state.startTime) ? 
+				{ startTime: Date.now() } : 
+				{ startTime: Date.now(), expTime: Date.now() };
+
+			return {
+				...state,
+				...times
+			}
+
 		default:
 			return initialState
 

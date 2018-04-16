@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import { Row, Jumbotron, Button } from 'react-bootstrap';
+import { Row, Jumbotron } from 'react-bootstrap';
 import ActionCards from './actionCards.js';
 import treeBg from '../img/trees.jpg';
 
 
 class Homepage extends Component {
 
-	render(){
+	componentDidMount() {
+		const timerInterval = setInterval( ()=> this.props.refreshTime(), 1000);
+	}
 
-		console.log(this.props.timerExp);
+	render(){
 
 		return(
 			<div className="homepage">
-				<h3>Time remaining: {this.props.timerExp - this.props.timerStart}</h3>
+				<h3>Time remaining: {Math.round((this.props.timerExp - this.props.timerStart)/1000, 1000)}</h3>
 				<Row>
 				<Jumbotron style={{ background: "url(" + treeBg + ")",
 								backgroundSize: "auto",
@@ -28,7 +30,7 @@ class Homepage extends Component {
 				</Row>
 
 				<Row>
-					<ActionCards />
+					<ActionCards addTime={this.props.addTime}/>
 				</Row>
 			</div>
 		);
