@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import logo from './img/logo_handprint.png'
 import Homepage from './components/homepage.js'
+import { connect } from 'react-redux';
+import { takeAction, addIdea } from './actions/actionIdea';
+import { addTime } from './actions/timer';
+
 
 class App extends Component {
   render() {
@@ -21,4 +25,21 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+
+  ideas: state.actionIdeas.ideas,
+  ideasTaken: state.actionIdeas.ideasTaken,
+  timerStart: state.timer.startTime,
+  timerExp: state.timer.expTime
+
+});
+
+const mapDispatchToProps = (dispatch) => ({
+
+  takeAction: (idea) => {dispatch(takeAction(idea))},
+  addIdea: (idea) => { dispatch(addIdea(idea)) },
+  addTime: (time) => { dispatch(addTime(time)) }
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,5 +1,5 @@
 const initialState = {
-	currentTime: Date.now(),
+	startTime: Date.now(),
 	expTime: Date.now()
 }
 
