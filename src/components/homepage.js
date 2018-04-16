@@ -32,6 +32,9 @@ class Homepage extends Component {
 		this.props.addTime(time);
 		var randIdea = this.props.ideas[Math.floor(Math.random()*this.props.ideas.length)];
 		var newIdeas = this.state.viewActions;
+		while(newIdeas.includes(randIdea)){
+			randIdea = this.props.ideas[Math.floor(Math.random()*this.props.ideas.length)];
+		}
 		newIdeas[index] = randIdea;
 		this.setState({ viewActions: newIdeas })
 	}
