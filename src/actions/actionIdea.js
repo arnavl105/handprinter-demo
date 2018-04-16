@@ -1,6 +1,5 @@
-export const takeAction = (idea) => ({
-	type: "TAKE_ACTION",
-	idea
+export const takeAction = () => ({
+	type: "TAKE_ACTION"
 });
 
 export const addIdea = (idea) => ({

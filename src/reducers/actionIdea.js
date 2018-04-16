@@ -1,6 +1,6 @@
 const initialState = {
 	ideas: [],
-	ideasTaken: []
+	ideasTaken: 0
 }
 
 export const actionIdeas = (state = initialState, action) => {
@@ -8,7 +8,7 @@ export const actionIdeas = (state = initialState, action) => {
 		case "TAKE_ACTION":
 			return {
 				...state,
-				ideasTaken: state.ideasTaken += action.idea
+				ideasTaken: state.ideasTaken += 1
 			}
 		case "ADD_IDEA":
 			return {

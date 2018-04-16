@@ -36,7 +36,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
 
-  takeAction: (idea) => {dispatch(takeAction(idea))},
+  takeAction: () => {dispatch(takeAction())},
   addIdea: (idea) => { dispatch(addIdea(idea)) },
   addTime: (time) => { dispatch(addTime(time)) },
   refreshTime: () => { dispatch(refreshTime()) }
