@@ -1,6 +1,9 @@
+import { testIdeas } from '../testData.js'
+
+
 const initialState = {
-	ideas: [],
-	ideasTaken: 0
+	"ideas": testIdeas,
+	"ideasTaken": 0		
 }
 
 export const actionIdeas = (state = initialState, action) => {

@@ -6,11 +6,61 @@ import treeBg from '../img/trees.jpg';
 
 class Homepage extends Component {
 
+	constructor(props){
+		super(props);
+		this.state={
+			viewActions: this.randomActions(this.props.ideas)
+		}
+		this.takeIdea = this.takeIdea.bind(this);
+	}
+
+	randomActions(ideas){
+		if(ideas.length==0){
+			return [];
+		}
+		else{
+			var ideasList = [];
+			for(var i=0; i < 4; i++){
+				var randIdea = ideas[Math.floor(Math.random()*ideas.length)];
+				ideasList.push(randIdea)
+			}
+			return ideasList;
+		}
+	}
+
+	takeIdea(time, index){
+		this.props.addTime(time);
+		var randIdea = this.props.ideas[Math.floor(Math.random()*this.props.ideas.length)];
+		var newIdeas = this.state.viewActions;
+		newIdeas[index] = randIdea;
+		this.setState({ viewActions: newIdeas })
+	}
+
 	componentDidMount() {
 		const timerInterval = setInterval( ()=> this.props.refreshTime(), 1000);
 	}
 
 	render(){
+
+
+		if(this.state.viewActions){
+			var cards = this.state.viewActions.map((idea, index) => {
+				return (
+	                <div className="idea-card" >
+	                    <ActionCards
+							takeIdea={this.takeIdea}
+							idea={idea}
+							index={index}
+	                    />
+	                </div>
+	            );
+
+			});
+		}
+		else {
+			var cards = [];
+		}
+
 
 		return(
 			<div className="homepage">
@@ -30,7 +80,9 @@ class Homepage extends Component {
 				</Row>
 
 				<Row>
-					<ActionCards addTime={this.props.addTime}/>
+
+					{ cards }
+
 				</Row>
 			</div>
 		);
