@@ -11,6 +11,8 @@ export const timer = (state = initialState, action) => {
 				...state,
 				expTime: state.expTime + action.time
 			}
+		default:
+			return initialState
 
 	}
 

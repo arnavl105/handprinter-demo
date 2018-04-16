@@ -8,8 +8,11 @@ class Homepage extends Component {
 
 	render(){
 
+		console.log(this.props.timerExp);
+
 		return(
 			<div className="homepage">
+				<h3>Time remaining: {this.props.timerExp - this.props.timerStart}</h3>
 				<Row>
 				<Jumbotron style={{ background: "url(" + treeBg + ")",
 								backgroundSize: "auto",

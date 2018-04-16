@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { timer } from './timer';
-import { actionIdea } from './actionIdea';
+import { actionIdeas } from './actionIdea';
 
 export default combineReducers({
 	timer,
-	actionIdea
+	actionIdeas
 })

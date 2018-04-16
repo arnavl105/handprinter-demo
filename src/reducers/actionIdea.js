@@ -13,8 +13,10 @@ export const actionIdeas = (state = initialState, action) => {
 		case "ADD_IDEA":
 			return {
 				...state,
-				ideas: idea += action.idea
+				ideas: state.idea += action.idea
 			}
+		default:
+			return initialState
 	
 	}
 
