@@ -65,9 +65,11 @@ class Homepage extends Component {
 		}
 
 
+		const dateExp = new Date(this.props.timerExp);
+
 		return(
 			<div className="homepage">
-				<h3>Time remaining: {Math.round((this.props.timerExp - this.props.timerStart)/1000, 1000)}</h3>
+				<h3 hidden={this.props.timerExp == this.props.timerStart} className="timeString">You are net positive until: {dateExp.toLocaleDateString('en-US') + ", " + dateExp.toLocaleTimeString('en-US')}</h3>
 				<Row>
 				<Jumbotron style={{ background: "url(" + treeBg + ")",
 								backgroundSize: "auto",

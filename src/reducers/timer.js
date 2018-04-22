@@ -9,7 +9,7 @@ export const timer = (state = initialState, action) => {
 		case "ADD_TIME":
 			return {
 				...state,
-				expTime: state.expTime + action.time
+				expTime: state.expTime + parseTime(action.time)
 			}
 		case "REFRESH_TIME":
 
@@ -25,6 +25,31 @@ export const timer = (state = initialState, action) => {
 		default:
 			return initialState
 
+	}
+
+
+}
+
+const parseTime = (timeString) => {
+	timeString = timeString.split(' ');
+	var num = timeString[0];
+	var unit = timeString[1];
+
+	try{
+		num = parseFloat(num);
+	} catch(error) {
+		throw 'INVALID STRING FORMAT';
+	}
+
+	switch(unit){
+		case "minutes":
+			return num * 60 * 1000;
+		case "hours":
+			return num * 60 * 60 * 1000;
+		case "days":
+			return num * 24 * 60 * 60 * 1000;
+		case "years":
+			return num * 24
 	}
 
 
