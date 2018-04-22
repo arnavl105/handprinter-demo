@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Panel, Button } from 'react-bootstrap';
 
 
 class ActionCards extends Component {
@@ -8,15 +8,15 @@ class ActionCards extends Component {
 
 		return(
 	          <div className="container col-md-3">
-	          <div className="card mb-4 box-shadow">
+	          <Panel>
 
 	          <div className="card-body">
-	          		<span>{this.props.idea.name}</span>
+	          		<h4>{this.props.idea.name}</h4>
 	          </div>
 
-	          <button type="button" className="btn btn-lg btn-outline-primary" onClick={ () => this.props.takeIdea(this.props.idea.time, this.props.index) }>+</button>
+	          <Button block bsSize="small" onClick={ () => this.props.takeIdea(this.props.idea.time, this.props.index) }>+</Button>
 
-	        </div>
+	        </Panel>
 	        </div>
 		);
 	}

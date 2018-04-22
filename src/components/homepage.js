@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Jumbotron } from 'react-bootstrap';
 import ActionCards from './actionCards.js';
 import treeBg from '../img/trees.jpg';
+import HomepageContent from './homepageContent.js';
 
 
 class Homepage extends Component {
@@ -88,6 +89,10 @@ class Homepage extends Component {
 
 					{ cards }
 
+				</Row>
+
+				<Row>
+					<HomepageContent />
 				</Row>
 			</div>
 		);
