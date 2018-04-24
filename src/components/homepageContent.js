@@ -21,29 +21,25 @@ const HomepageContent = () => {
         
         <Row>
           <Col md={12}>
-            <h2 className="text-center">Get Net Positive</h2>
-            <p>By being net positive you are taking on actions which allow you to diminish your footprint below that of the average person. By taking action through Handprinter, as well as engaging our friends, we can all strive for net positivity.</p>
+            <h2 className="subHeader">Our Footprint</h2>
+            <p style={{float:"right"}}>is the sum of all the (unintended) negative impacts that come from the activities which supply us the goods and services that we buy and use throughout the year</p>
           </Col>
         </Row>
 
         <Row>
-        	<Col md={12}>
-            	<h2 className="text-center">Getting Started</h2>
-        	</Col>
+            <p className="text-center">If our footprint is the cost to the world of sustaining us this year,
+            our handprint is composed of all the benefits and good that we bring to the world during this same year.</p>
+            <h2 className= "text-center">If our footprint is what we take, our handprint is what we give.</h2>
         </Row>
 
-        <Row>
-
-        	<Col md={2} mdOffset={4}><Button bsStyle="info">Calculate my Handprint &raquo;</Button></Col>
-            <Col md={2}><Button bsStyle="info">Calculate my Footprint &raquo;</Button></Col>
-
-        </Row>
-
-        <Row>
+         <Row>
           <Col md={12}>
-            <h2 className="text-center">Meet some of our Handprinters</h2>
+            <h2 className="subHeader">Our Handprint</h2>
+            <p style={{float:"right"}}>is the sum of all the (unintended) negative impacts that come from the activities which supply us the goods and services that we buy and use throughout the year</p>
           </Col>
         </Row>
+
+
     </Grid>
 
 	);

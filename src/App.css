@@ -1,8 +1,10 @@
-.App {
-  text-align: center;
-}
+
 
 .timeString{
-	color: green;
+	color: #208F80;
 }
 
+.subHeader{
+	text-decoration: underline;
+    text-decoration-color: #208F80;
+}

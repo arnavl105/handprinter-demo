@@ -31,6 +31,7 @@ class Homepage extends Component {
 
 	takeIdea(time, index){
 		this.props.addTime(time);
+		this.props.takeAction();
 		var randIdea = this.props.ideas[Math.floor(Math.random()*this.props.ideas.length)];
 		var newIdeas = this.state.viewActions;
 		while(newIdeas.includes(randIdea)){
@@ -70,9 +71,11 @@ class Homepage extends Component {
 
 		return(
 			<div className="homepage">
-				<h3 hidden={this.props.timerExp == this.props.timerStart} className="timeString">You are net positive until: {dateExp.toLocaleDateString('en-US') + ", " + dateExp.toLocaleTimeString('en-US')}</h3>
+				<h3 hidden={this.props.timerExp <= this.props.timerStart} className="timeString">You are net positive until: {dateExp.toLocaleDateString('en-US') + ", " + dateExp.toLocaleTimeString('en-US')}</h3>
+				<h3 hidden={this.props.timerExp <= this.props.timerStart} className="timeString">You have taken {this.props.ideasTaken} actions.</h3>
+
 				<Row>
-				<Jumbotron style={{ background: "url(" + treeBg + ")",
+				<Jumbotron className="text-center"style={{ background: "url(" + treeBg + ")",
 								backgroundSize: "auto",
 								backgroundRepeat: "round" }}>
 					<div className="jumboText" style={{ backgroundColor: "rgb(255, 255, 255, 0.75)" }}>
@@ -86,13 +89,15 @@ class Homepage extends Component {
 				</Row>
 
 				<Row>
+					<HomepageContent />
+				</Row>
+
+
+
+				<Row>
 
 					{ cards }
 
-				</Row>
-
-				<Row>
-					<HomepageContent />
 				</Row>
 			</div>
 		);

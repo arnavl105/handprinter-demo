@@ -15,6 +15,7 @@ class App extends Component {
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous" />
         <img src={logo} alt="logo"/>
+        <a style={{marginTop: "5%", float: "right"}}>Join Handprinter</a>
         <hr/>
 
         <Homepage {...this.props} />
