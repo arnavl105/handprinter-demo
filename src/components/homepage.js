@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Jumbotron } from 'react-bootstrap';
+import { Row, Jumbotron, Alert, Button } from 'react-bootstrap';
 import ActionCards from './actionCards.js';
 import treeBg from '../img/trees.jpg';
 import HomepageContent from './homepageContent.js';
@@ -69,10 +69,16 @@ class Homepage extends Component {
 
 		const dateExp = new Date(this.props.timerExp);
 
+		const alert = (this.props.ideasTaken != 0 && this.props.ideasTaken % 5 == 0)? (
+				<Alert bsStyle="danger" onDismiss={this.handleDismiss}>
+					<p>You are on a roll! You have taken {this.props.ideasTaken} actions. Sign up to save your progress!</p>
+            		<Button>Sign Up</Button>
+       			</Alert>) : ""; 
+
 		return(
 			<div className="homepage">
 				<h3 hidden={this.props.timerExp <= this.props.timerStart} className="timeString">You are net positive until: {dateExp.toLocaleDateString('en-US') + ", " + dateExp.toLocaleTimeString('en-US')}</h3>
-				<h3 hidden={this.props.timerExp <= this.props.timerStart} className="timeString">You have taken {this.props.ideasTaken} actions.</h3>
+				{ alert }
 
 				<Row>
 				<Jumbotron className="text-center"style={{ background: "url(" + treeBg + ")",
@@ -89,16 +95,10 @@ class Homepage extends Component {
 				</Row>
 
 				<Row>
-					<HomepageContent />
+					<HomepageContent cards={cards}/>
 				</Row>
 
 
-
-				<Row>
-
-					{ cards }
-
-				</Row>
 			</div>
 		);
 	}

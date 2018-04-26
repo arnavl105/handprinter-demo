@@ -1,7 +1,8 @@
 import React from 'react';
 import {Grid, Row, Col, Button} from 'react-bootstrap';
+import placeholder from '../img/placeholder.png'
 
-const HomepageContent = () => {
+const HomepageContent = (props) => {
 
 	return(
 
@@ -15,7 +16,7 @@ const HomepageContent = () => {
           </Col>
 
           <Col md={4}>
-          	<img src="placeholder.png" />
+          	<img src={ placeholder } />
           </Col>
         </Row>
         
@@ -36,6 +37,43 @@ const HomepageContent = () => {
           <Col md={12}>
             <h2 className="subHeader">Our Handprint</h2>
             <p style={{float:"right"}}>is the sum of all the (unintended) negative impacts that come from the activities which supply us the goods and services that we buy and use throughout the year</p>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={12}>
+            <h2 className="subHeader">See what handprints you can make:</h2>
+            { props.cards }
+          </Col>
+        </Row>
+
+
+        <Row>
+          <Col md={12}>
+            <h2 className="subHeader">Join our network of Handprinters</h2>
+            <img src={ placeholder } />
+          </Col>
+        </Row>
+
+        <Row>
+        <Col md={8}>
+            <h1 className="subHeader">4,685</h1>
+            <h3>Handprinters are net positive.</h3> 
+            </Col>
+
+          <Col md={4}>
+            <img src={ placeholder } />
+          </Col>
+        </Row>
+
+                <Row>
+        <Col md={8}>
+            <h3>Our handprinters saved <span className="subHeader">5,000,000</span>
+            &nbsp;gallons of water last month.</h3> 
+            </Col>
+
+          <Col md={4}>
+            <img src={ placeholder } />
           </Col>
         </Row>
 
