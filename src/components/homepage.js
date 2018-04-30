@@ -10,9 +10,26 @@ class Homepage extends Component {
 	constructor(props){
 		super(props);
 		this.state={
-			viewActions: this.randomActions(this.props.ideas)
+			viewActions: this.carousel(0),
+			ideaIndex: 0
 		}
 		this.takeIdea = this.takeIdea.bind(this);
+		this.shuffleIdeas = this.shuffleIdeas.bind(this);
+		this.carousel = this.carousel.bind(this);
+	}
+
+	shuffleIdeas(){
+		console.log("shuffling");
+		var index = this.state.ideaIndex;
+		index = (index + 4) % this.props.ideas.length;
+		this.setState({ideaIndex: index});
+		this.setState({viewActions: this.carousel(index)});
+
+	}
+
+	carousel(index){
+		console.log("carouseling");
+		return this.props.ideas.slice(index, index + 4)
 	}
 
 	randomActions(ideas){
@@ -44,6 +61,8 @@ class Homepage extends Component {
 	componentDidMount() {
 		const timerInterval = setInterval( ()=> this.props.refreshTime(), 1000);
 	}
+
+
 
 	render(){
 
@@ -77,7 +96,6 @@ class Homepage extends Component {
 
 		return(
 			<div className="homepage">
-				<h3 hidden={this.props.timerExp <= this.props.timerStart} className="timeString">You are net positive until: {dateExp.toLocaleDateString('en-US') + ", " + dateExp.toLocaleTimeString('en-US')}</h3>
 				{ alert }
 
 				<Row>
@@ -95,7 +113,7 @@ class Homepage extends Component {
 				</Row>
 
 				<Row>
-					<HomepageContent cards={cards}/>
+					<HomepageContent shuffleIdeas= { this.shuffleIdeas } cards={cards} timerExp={this.props.timerExp} timerStart={this.props.timerStart} dateExp={dateExp }/>
 				</Row>
 
 

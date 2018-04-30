@@ -1,6 +1,7 @@
 import React from 'react';
 import {Grid, Row, Col, Button} from 'react-bootstrap';
-import placeholder from '../img/placeholder.png'
+import placeholder from '../img/placeholder.png';
+import yellinaImage1 from '../img/yellina.jpg';
 
 const HomepageContent = (props) => {
 
@@ -16,7 +17,7 @@ const HomepageContent = (props) => {
           </Col>
 
           <Col md={4}>
-          	<img src={ placeholder } />
+          	<img className="yellinaImage" src={ yellinaImage1 } />
           </Col>
         </Row>
         
@@ -43,7 +44,9 @@ const HomepageContent = (props) => {
         <Row>
           <Col md={12}>
             <h2 className="subHeader">See what handprints you can make:</h2>
+            <Button onClick={props.shuffleIdeas}>See more</Button>
             { props.cards }
+
           </Col>
         </Row>
 
