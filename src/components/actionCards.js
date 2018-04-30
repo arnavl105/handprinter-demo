@@ -19,7 +19,7 @@ class ActionCards extends Component {
 
 		return(
 	          <div className="container col-md-3">
-	          <Panel expanded={this.state.open}>
+	          <Panel className="actionCard"expanded={this.state.open}>
 
 	          <div className="card-body">
 	          		<h4>{this.props.idea.name}</h4>

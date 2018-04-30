@@ -18,17 +18,23 @@ class Homepage extends Component {
 		this.carousel = this.carousel.bind(this);
 	}
 
-	shuffleIdeas(){
-		console.log("shuffling");
+	shuffleIdeas(direction){
+		var offset = (direction == "forwards")? 4 : -4;
 		var index = this.state.ideaIndex;
-		index = (index + 4) % this.props.ideas.length;
+		index = (index + offset);
+		if(index >= this.props.ideas.length){
+			index = 0;
+		}
+		else if(index < 0){
+			index = this.props.ideas.length - 4;
+		}
+		console.log((index + offset) % this.props.ideas.length);
 		this.setState({ideaIndex: index});
 		this.setState({viewActions: this.carousel(index)});
 
 	}
 
 	carousel(index){
-		console.log("carouseling");
 		return this.props.ideas.slice(index, index + 4)
 	}
 

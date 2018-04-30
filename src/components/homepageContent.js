@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Row, Col, Button} from 'react-bootstrap';
+import {Grid, Row, Col, Button, Glyphicon} from 'react-bootstrap';
 import placeholder from '../img/placeholder.png';
 import yellinaImage1 from '../img/yellina.jpg';
 
@@ -44,10 +44,14 @@ const HomepageContent = (props) => {
         <Row>
           <Col md={12}>
             <h2 className="subHeader">See what handprints you can make:</h2>
-            <Button onClick={props.shuffleIdeas}>See more</Button>
             { props.cards }
 
           </Col>
+        </Row>
+
+        <Row>
+            <Button onClick={() => {props.shuffleIdeas("backwards")}}><Glyphicon glyph="chevron-left"/></Button>
+            <Button onClick={() => {props.shuffleIdeas("forwards")}}><Glyphicon glyph="chevron-right"/></Button>  
         </Row>
 
 
