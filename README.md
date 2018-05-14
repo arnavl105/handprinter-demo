@@ -12,13 +12,16 @@ Currently sits on a GoDaddy hosting box. Running a simple `npm run build` will g
 
 ## Documentation
 
-In this repo you can find the wireframes and style guide for the project under the `/doc` directory. The wireframes include the redesign for the homepage as well as the proposed redesign of the app itself
+In this repo you can find the wireframes and style guide for the project under the `/doc` directory. The wireframes include the redesign for the homepage as well as the proposed redesign of the app itself. It also includes the wireframes for a proposed onboarding process. 
+
+Also in the docs are the original write ups on the handprinter personas as well as the 30 base action ideas with their corresponding LCA values. These also exist in the `testData.js` file but not as nicely formatted.
 
 ## Work to be done
 
 * Authentication layer
 * User Dashboard
 * Node backend/api
+* Onboarding process
 
 ## Code Explained
 
