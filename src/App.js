@@ -21,8 +21,25 @@ class App extends Component {
         <Homepage {...this.props} />
         
         <hr/>
-        <p>Footer goes here</p>
+        <div id="footer">
+
+          <div id="footer_col1">
+
+          <span>Copyright 2018 by New Earth</span>
+
+          <p class="footer_title">Contact us:</p>
+
+          <p class="footer_content">
+
+          Tel: (207) 351-1897</p>
+
+          </div>
+
+
       </div>
+
+      </div>
+
     );
   }
 }

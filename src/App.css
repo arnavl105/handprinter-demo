@@ -15,3 +15,45 @@
 
 }
 
+.contentText {
+
+	font-size: 1.5em;
+
+}
+
+.subSubHeader {
+    font-style: italic;
+}
+
+.profiles {
+
+	width: 100%;
+	height: 130px;
+
+}
+.profileTitle{
+
+	font-size: 1.25em;
+	text-align: center;
+}
+
+.profileEnd{
+	text-decoration: underline;
+
+}
+
+hr{
+	color: black;
+	background-color: black;
+	height: 20px;
+
+}
+
+#footer{
+	text-align: center;
+}
+
+#footer_col3, #footer_col2{
+	float: right;
+
+}
